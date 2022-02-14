@@ -48,7 +48,10 @@ RUN set -eux \
         php8.0-memcached \
         php8.0-gd \
         php8.0-dev \
+        && php -m \
+        && php --version \
         && update-alternatives --set php /usr/bin/php8.0 \
+        && php -m \
         && php --version \
         && php --version | grep -q "PHP 8.0"
 
@@ -72,8 +75,8 @@ RUN set -eux \
         postgresql-client \
     && apt-get clean \
     && php --version \
-    && php -m \
     && php --version | grep -q "PHP 8.0" \
+    && php -m \
     #####################################
     # Composer:
     #####################################
