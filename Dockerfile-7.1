@@ -65,6 +65,9 @@ RUN set -eux \
         tree \
         postgresql-client \
     && apt-get clean \
+    && php --version \
+    && php -m \
+    && php --version | grep -q "PHP 7.1" \
     #####################################
     # Composer:
     #####################################
