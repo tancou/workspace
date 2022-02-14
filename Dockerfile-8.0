@@ -32,6 +32,7 @@ RUN set -eux \
     && apt-get upgrade -y \
     && apt-get install -y --allow-downgrades --allow-remove-essential \
         --allow-change-held-packages \
+        -o Debug::pkgDepCache::AutoInstall=true \
         php8.0 \
         php8.0-cli \
         php8.0-common \
